@@ -16,7 +16,7 @@ EXPOSE 6881
 VOLUME /utserver
 
 WORKDIR /opt/utorrent-server-alpha-v3_3/
-ENTRYPOINT ["./utserver", "-configfile", "utserver.conf", "-logfile", "/var/log/utserver.log"]
+CMD ["./utserver", "-configfile", "utserver.conf", "-logfile", "/var/log/utserver.log"]
 
 
 
