@@ -3,8 +3,8 @@ plex:
   ports:
     - "32400:32400"
   volumes:
-    - config/:/var/lib/plexmediaserver
-    - ~/Google Drive/music:/plex/media
+    - plex/config:/var/lib/plexmediaserver
+    - /media/jdb/Big Drive/media:/plex
   restart: always
   stdin_open: true
   tty: true
@@ -12,9 +12,9 @@ utserver:
   build: utorrent/
   ports:
     - "6881:6881"
-    - "8080"
+    - "8080:8080"
   volumes:
-    - ./ut_data:/data
+    - /media/jdb/Big Drive/Downloads:/utserver
   restart: always
   stdin_open: true
   tty: true

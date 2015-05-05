@@ -15,7 +15,7 @@ RUN dpkg -i /tmp/plexmediaserver.deb
 
 # Declare necessary volumes
 VOLUME /var/lib/plexmediaserver
-VOLUME /plex/media
+VOLUME /plex
 
 # Make sure plex owns its config and media, and can play media
 RUN chown -R plex:plex /var/lib/plexmediaserver /plex && chmod -R 660 /plex
