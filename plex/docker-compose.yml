@@ -1,0 +1,19 @@
+plex:
+  build: .
+  ports:
+    - "32400:32400"
+  volumes:
+    - config/:/var/lib/plexmediaserver
+    - ~/Google Drive/music:/plex/media
+  restart: always
+  stdin_open: true
+  tty: true
+shell:
+  build: .
+  command: bash
+  volumes:
+    - config/:/var/lib/plexmediaserver
+    - ~/Google Drive/music:/plex/media/music
+  restart: always
+  stdin_open: true
+  tty: true
