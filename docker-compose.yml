@@ -1,5 +1,5 @@
 plex:
-  build: .
+  build: plex/
   ports:
     - "32400:32400"
   volumes:
@@ -8,12 +8,13 @@ plex:
   restart: always
   stdin_open: true
   tty: true
-shell:
-  build: .
-  command: bash
+utserver:
+  build: utorrent/
+  ports:
+    - "6881:6881"
+    - "8080"
   volumes:
-    - config/:/var/lib/plexmediaserver
-    - ~/Google Drive/music:/plex/media/music
+    - ./ut_data:/data
   restart: always
   stdin_open: true
   tty: true
